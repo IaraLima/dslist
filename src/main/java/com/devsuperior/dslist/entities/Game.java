@@ -15,7 +15,7 @@ public class Game {
     private String genre;
     private String platforms;
 
-    private Integer Score;
+    private Integer score;
     private String imgUrl;
     @Column(columnDefinition = "TEXT")
     private String shortDescription;
@@ -24,24 +24,43 @@ public class Game {
 
     public Game(){
     }
-    public Game(Long gameId, String title, Integer year, String genre, String platforms, String imgUrl, String shortDescription, String longDescription) {
-        this.gameId = gameId;
-        this.title = title;
-        this.year = year;
-        this.genre = genre;
-        this.platforms = platforms;
-        this.imgUrl = imgUrl;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
-    }
+
     // ORM - mapeamento objeto relacional, mapear objeto game para virar um registro
 
     public Long getGameId() {
         return gameId;
     }
 
+    public Game(Long gameId, String title, Integer year, String genre, String platforms, Integer score, String imgUrl, String shortDescription, String longDescription) {
+        this.gameId = gameId;
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.platforms = platforms;
+        this.score = score;
+        this.imgUrl = imgUrl;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
+    }
+
     public void setGameId(Long gameId) {
         this.gameId = gameId;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     public String getTitle() {
